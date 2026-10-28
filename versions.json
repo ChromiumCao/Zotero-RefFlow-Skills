@@ -1,0 +1,19 @@
+{
+  "project": "Zotero-RefFlow-Skills",
+  "skills": {
+    "zotero-input": {
+      "version": "0.1.0",
+      "path": "zotero-input",
+      "origin_tag": "v0.1.0",
+      "origin_commit": "cc85e97a23a19eb0ac855a090794491309320c5f",
+      "snapshot_files": 38
+    },
+    "zotero-output": {
+      "version": "0.1.1",
+      "path": "zotero-output",
+      "origin_tag": "v0.1.1",
+      "origin_commit": "3e253474f87bafc938538e021b11f9e7ee767122",
+      "snapshot_files": 20
+    }
+  }
+}
