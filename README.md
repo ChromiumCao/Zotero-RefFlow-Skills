@@ -9,7 +9,7 @@
 
 ## 安装
 
-1. 打开上表中所需的 ZIP，在 GitHub 文件页下载原文件并解压。
+1. 打开上表中所需的 ZIP，在 GitHub 文件页下载原文件并解压。或从 Releases 下载。
 2. 将解压出的完整 `zotero-input` 或 `zotero-output` 目录放进 Codex 技能目录。默认位置为 `~/.codex/skills/`，自定义位置为 `$CODEX_HOME/skills/`。
 3. 准备 Python 3.10 或更高版本。Input 的主要脚本使用 Python 标准库。使用 Output 时，进入 `zotero-output/` 安装依赖并检查环境。
 
