@@ -1,88 +1,57 @@
 # Zotero-RefFlow-Skills
 
-两个可独立安装、运行和维护的 Zotero 工作流技能，放在同一个项目中管理。
+两项面向 Zotero 文献管理和论文写作的 Codex 技能。**Input 把文献整理进 Zotero，Output 把文稿中的引用整理成统一格式。** 两项技能可以分别下载、安装、运行和更新。Output 需要补录库中缺失的条目时，可以搭配 Input。
 
-| Skill | 当前版本 | 主要用途 | 单独下载 |
-| --- | --- | --- | --- |
-| [Zotero Input](zotero-input/README.md) | v0.1.0 | 文献识别、检索核验、导入、引用补充及核查 | [zotero-input-v0.1.0.zip](packages/zotero-input-v0.1.0.zip) |
-| [Zotero Output](zotero-output/README.md) | v0.1.1 | 文稿合并、引用映射与排序、动态或静态文档生成 | [zotero-output-v0.1.1.zip](packages/zotero-output-v0.1.1.zip) |
+| 技能 | 适合什么任务 | 独立安装包 |
+| --- | --- | --- |
+| [Zotero Input](zotero-input/README.md) · v0.1.0 | 从文档或表格识别参考文献，核验并导入指定 Zotero 分类（collection）。也可为段落查找文献，或核查现有引文是否得到原文支持。 | [Input v0.1.0 ZIP](packages/zotero-input-v0.1.0.zip) |
+| [Zotero Output](zotero-output/README.md) · v0.1.1 | 合并带参考文献的文稿，或整理单篇文稿的引文。核对引用位置、去重并统一样式，生成可编辑的 Word 文档或 Markdown。 | [Output v0.1.1 ZIP](packages/zotero-output-v0.1.1.zip) |
 
-在 GitHub 中打开 ZIP 文件后，点击 **Download raw file** 下载；私有仓库需要先登录有访问权限的账号。两个 ZIP 均包含完整的技能目录，可只下载、安装其中一个。
+## 安装
 
-## 目录与独立性
+1. 打开上表中所需的 ZIP，在 GitHub 文件页下载原文件并解压。
+2. 将解压出的完整 `zotero-input` 或 `zotero-output` 目录放进 Codex 技能目录。默认位置为 `~/.codex/skills/`，自定义位置为 `$CODEX_HOME/skills/`。
+3. 准备 Python 3.10 或更高版本。Input 的主要脚本使用 Python 标准库。使用 Output 时，进入 `zotero-output/` 安装依赖并检查环境。
 
-```text
-Zotero-RefFlow-Skills/
-├── README.md
-├── versions.json
-├── zotero-input/        # Input 的完整源码、说明与测试
-├── zotero-output/       # Output 的完整源码、说明与测试
-├── packages/           # 各 skill 的独立下载包
-└── tools/
-    └── package_skills.py
+```sh
+python -m pip install -r requirements.txt
+python -X utf8 -B scripts/zotero_output.py doctor
 ```
 
-- 每个 skill 的运行资源都在自己的目录中，没有共用的运行时代码、子模块或指向另一台电脑的链接。
-- Input 不依赖 Output；Output 可独立做库内只读映射和明确选择的静态格式化，Input 只是其可选导入增强路径。
-- 可只修改其中一个目录，另一个 skill 的版本不必一起变更。一个 Git 仓库统一保存历史，修改记录仍可按目录分别查看和提交。
-- 独立安装不等于没有环境依赖。动态 Zotero 操作、Word Refresh、PDF 读取等环境要求以各 skill 的说明为准。
+Input 导入文献需要运行中的 Zotero Desktop、已启用的本地 API 和 Connector 服务。Output 生成动态引用时通过本地 API 读取文献库，并使用 Microsoft Word 和 Zotero 的 Word 插件完成刷新验证。Output 的静态编号模式可脱离 Zotero 运行。PDF 文本提取和扫描件 OCR 的要求见各技能文档。
 
-本次初始源码分别导出自 Input 的 `v0.1.0`、Output 的 `v0.1.1` 标签。原始提交及文件数量记录在 [versions.json](versions.json)。子目录中的说明可能包含旧机器的历史部署描述；新机器应安装完整目录，不依赖旧机器的 Junction 或本地路径。
+## 使用示例
 
-## 在另一台计算机上测试
+### Zotero Input
 
-只想使用某一个 skill：登录 GitHub，下载表格中对应的独立 ZIP，解压，将完整的 `zotero-input` 或 `zotero-output` 目录安装到所用客户端的技能目录。不要只复制 SKILL.md 或单个脚本；Input 的 `scripts/_vendor` 也需要保留。
+> 用 zotero-input 读取附件里的参考文献，核验后导入 Zotero 的「项目文献」分类。优先复用库中已有的条目。
 
-需要测试、修改并同步回 GitHub：建议用 GitHub Desktop 登录同一账号，选择 **File → Clone repository**，克隆本仓库。之后修改所需的 skill 目录，通过提交和推送保存改动。在另一台电脑开始修改前先拉取最新版本，避免两台电脑互相覆盖。
+Input 会检查条目是否实际进入目标分类。引用证据核查可以独立于导入执行。详细用法见 [Zotero Input 文档](zotero-input/README.md)。
 
-Output 的依赖和环境检查：
+### Zotero Output
 
-```text
-python -m pip install -r zotero-output/requirements.txt
-python -X utf8 -B zotero-output/scripts/zotero_output.py doctor
+> 用 zotero-output 按附件顺序合并这两篇文稿。引用统一为 GB/T 7714—2015 顺序编码，生成可以用 Zotero 刷新的 Word 文档。不使用 collection，直接复用我库里已有的条目。
+
+动态 DOCX 使用 Zotero 原生引用域，可在 Word 中通过 Zotero 插件添加、编辑和刷新引文。无法可靠匹配到库内条目的引用会列为待解决项。只需普通编号时，可明确要求静态 DOCX 或 Markdown，后续编号由用户维护。详细用法和验证范围见 [Zotero Output 文档](zotero-output/README.md)。
+
+## 开发与打包
+
+两项技能的代码、说明和测试分别位于 [zotero-input/](zotero-input/) 和 [zotero-output/](zotero-output/)。[versions.json](versions.json) 记录各自的版本和最初导入的 Git 快照。公开分发包在这些快照上补充了许可证、署名和发布文档。更新某项技能时，同步调整该技能的版本与下载链接，再从仓库根目录单独打包。
+
+```sh
+python tools/package_skills.py --skill zotero-input
+python tools/package_skills.py --skill zotero-output
 ```
 
-Input 的主要脚本使用 Python 标准库；可先查看命令帮助：
+从仓库根目录运行相应的隔离测试。真实 Word 刷新和 Zotero 集成需在相应桌面环境中验证。
 
-```text
-python -X utf8 -B zotero-input/scripts/zotero.py --help
-```
-
-两个 skill 的隔离测试可分开运行：
-
-```text
+```sh
 python -X utf8 -B -m unittest discover -s zotero-input/scripts -p "test_*.py" -v
 python -X utf8 -B -m unittest discover -s zotero-output/scripts -p "test_*.py" -v
 ```
 
-若执行环境的默认临时目录不可写，可将该测试进程的 TEMP/TMP 指向一个可写临时目录。隔离测试不代表实际 Word、Zotero、界面选择或计时集成均已通过；各 skill 的 README 和 references 文档保留了具体边界。
+## 代码来源与许可
 
-## 分别修改、版本与打包
+本项目采用 [Apache License, Version 2.0](LICENSE)。两项独立 ZIP 各自包含许可证副本。
 
-例如，只升级 Output 时，修改 `zotero-output/` 中的代码、测试和说明，更新其 SKILL.md 的版本及 README；Input 的内容和版本保持不变。同步更新 `versions.json` 对应条目的 `version`，再生成 Output 下载包：
-
-```text
-python tools/package_skills.py --skill zotero-output
-```
-
-只打包 Input：
-
-```text
-python tools/package_skills.py --skill zotero-input
-```
-
-Input 的版本标记在其 VERSION 文件中。脚本会核对各 skill 自己的版本与 versions.json 一致，然后更新 packages 中相应的 ZIP；不会因为修改了一个 skill 而要求重打另一个。历史版本包不会自动删除；旧包与新版包的保留由维护者决定。修改并打包后，也应更新本 README 的当前版本与下载链接。
-
-`origin_tag`、`origin_commit` 和 `snapshot_files` 只记录导入这个组合项目时的原始快照，不表示后续修改后的当前 Git 提交。新仓库的后续版本建议用 `zotero-input-v0.1.0`、`zotero-output-v0.1.1` 这类带 skill 名称的标签分别管理。
-
-## 首次网页上传
-
-1. 新建 GitHub 仓库，名称为 `Zotero-RefFlow-Skills`，可见性选择 **Private**。创建页面的 README、.gitignore 和 License 暂不自动添加，本目录已备好项目说明和忽略规则。
-2. 创建成功后，点击 **uploading an existing file**；若已显示文件列表，选择 **Add file → Upload files**。
-3. 打开本地 `Zotero-RefFlow-Skills` 目录，将其中的文件与子目录拖入上传区域。应让 README.md、zotero-input、zotero-output 等直接位于仓库根目录，不多套一层同名项目目录。
-4. 等待上传完成，填写 `Initial import: Input v0.1.0 and Output v0.1.1`，在自己的空仓库中提交到 main。按钮名称可能显示为 Commit changes；若界面要求分支或 PR，则按界面完成对应提交。
-5. 检查仓库名称旁显示 **Private**，源码目录和两个独立 ZIP 均可打开。
-
-这里应上传解压后的项目内容，而不是只上传整个项目的大 ZIP。仓库只包含技能代码、测试、说明及版本包，不包含 Zotero 数据库、实验文档或运行缓存。本准备目录不含原来两个仓库的 Git 历史；原仓库仍在原位置保留。
-
-官方操作说明：[创建仓库](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)、[上传文件](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository)、[GitHub Desktop 克隆](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop)。
+感谢 [Yuan1z0825](https://github.com/Yuan1z0825) 和 [nature-skills](https://github.com/Yuan1z0825/nature-skills) 的贡献者。Zotero Input 内置的文献检索与导出脚本改编自该项目的 `nature-citation`，上游同样采用 Apache-2.0。来源提交、修改说明和署名随 Input 一同分发。参见 [NOTICE](NOTICE) 和 [Input 上游来源记录](zotero-input/references/bundled-search.md)。

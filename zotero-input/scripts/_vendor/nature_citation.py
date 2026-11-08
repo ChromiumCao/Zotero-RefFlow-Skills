@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
+# Adapted from nature-citation by Yuan1z0825 and the nature-skills contributors.
+# Modified by Zotero-RefFlow-Skills for Zotero Input. See ../../NOTICE and
+# ../../references/bundled-search.md for attribution and a summary of changes.
 """
 Segment manuscript text, search citation candidates in an explicit journal scope, and export a
 reference-manager file. By default the script writes one inspectable `.ris` file.

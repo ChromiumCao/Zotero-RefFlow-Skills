@@ -1,18 +1,22 @@
 # Bundled Search Provenance
 
-`scripts/_vendor/nature_citation.py` is a local copy of the search/export script
-from the user's installed `nature-citation` skill (manifest version: 2.1.0),
-read on 2026-10-03. The original installation was not modified. Attribution is
-kept here rather than requiring that skill at runtime. No upstream license is
-asserted when one was not present with the copied source.
+`scripts/_vendor/nature_citation.py` is a modified copy of the `nature-citation`
+search and export script from Yuan1z0825 and the nature-skills contributors.
+The original was taken from an installed copy (manifest version 2.1.0) on
+2026-10-03. The recorded hash matches the pinned upstream file with CRLF line
+endings. The upstream repository and this distribution use Apache-2.0.
+[Upstream source at commit 66668ae](https://github.com/Yuan1z0825/nature-skills/blob/66668aea4f8cbdfd6791bbeac5aed53f233eac88/skills/nature-citation/scripts/nature_citation.py)
+· [Upstream license at that commit](https://github.com/Yuan1z0825/nature-skills/blob/66668aea4f8cbdfd6791bbeac5aed53f233eac88/LICENSE)
+· [Distributed license](../LICENSE) · [Attribution](../NOTICE)
 
 Original script SHA-256:
 `E145269FB98326C985AE95A8DE2B29009592A9A16B9C1763BB1E6C550E3604FB`.
 
-Local changes: unrestricted `all` journal scope is the default, other explicit
-scopes remain supported; XML parsing uses an existing defusedxml when available,
-or a bounded standard-library parser rejecting entities/DOCTYPE/NUL when absent;
-generic report/browser labels no longer imply a default CNS-only search.
+Zotero Input makes unrestricted `all` the default journal scope and retains the
+explicit scopes. XML parsing uses defusedxml when available and a bounded
+standard-library parser rejecting entities, DOCTYPE and NUL otherwise.
+The report and browser labels describe unreviewed candidates. The HTML browser
+escapes embedded JSON, validates links and renders selection text as text.
 Legacy format/author tests are included. Search remains metadata candidate
 generation; approved citation rendering is in `citation_handoff.py`.
 

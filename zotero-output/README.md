@@ -118,4 +118,8 @@ references/        操作流程、接口和验证记录
 requirements.txt   Word 处理依赖
 ```
 
-本地发布版本标签为 **v0.1.1**。新版的真实 Word 刷新、跨库集成和交互式 60 秒计时验证与隔离测试分开记录，详见 verification.md。
+当前版本为 **v0.1.1**。真实 Word 刷新、跨库集成和交互式 60 秒计时验证与隔离测试分开记录，详见 [验证记录](references/verification.md)。
+
+## 许可证
+
+本技能采用 [Apache License, Version 2.0](LICENSE)，独立下载包内附完整许可文本。

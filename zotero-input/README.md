@@ -46,10 +46,8 @@ Zotero 界面当前选中的 collection；`--collection` 只是目标约束，�
 
 ## 安装与使用
 
-将完整 `zotero-input` 目录放入支持本地 skill 的客户端技能目录；不要只复制
-`SKILL.md` 或某一个脚本。当前电脑的 Codex 技能目录使用 Junction 指向本目录，
-因此只维护一份原文件。Git 仓库位于 skill 目录内，不包含上级项目中的实验数据
-和回滚备份；本次版本仅保存在本地，未上传远程。
+下载 Input 独立 ZIP 并解压，将完整 `zotero-input` 目录放入客户端的技能目录，
+保留包内脚本和参考资料。Codex 默认技能目录为 `~/.codex/skills/`。
 
 可直接用自然语言请求，例如：
 
@@ -77,7 +75,7 @@ Zotero 界面当前选中的 collection；`--collection` 只是目标约束，�
 
 ## 脚本入口
 
-以下命令在本仓库根目录运行；路径和 collection key 应替换为实际值。
+以下命令在 `zotero-input/` 目录运行；路径和 collection key 应替换为实际值。
 `--yes` 和各审批标志只记录已取得的用户授权，不能代替授权。
 
 ```powershell
@@ -112,15 +110,14 @@ python -X utf8 -B scripts/citation_audit.py report --review audit-review.json --
 
 ## 验证
 
-在仓库根目录运行隔离单元测试：
+在 `zotero-input/` 目录运行隔离单元测试：
 
 ```powershell
 python -X utf8 -B -m unittest discover -s scripts -p "test_*.py" -v
 ```
 
 v0.1.0 封版前的已记录验证：232 项技能单元测试、299 项扩展隔离回归和
-27 项浏览器模拟断言通过；299 项包含 232 项，不应相加。扩展回归及合成 PDF
-烟雾样本位于上级实验目录，不属于本 skill 仓库，仅上述单元测试随仓库提供。
+27 项浏览器模拟断言通过；299 项包含 232 项。随包提供上述单元测试。
 
 已有个人库导入与可选插件子笔记曾完成实际写入回读验证；新引文核查使用合成
 审核数据和实际 PDF 读取器验证，尚未评测真实论文语义判断准确率。不要将模拟
@@ -129,9 +126,8 @@ v0.1.0 封版前的已记录验证：232 项技能单元测试、299 项扩展�
 
 ## 代码来源与版本
 
-内置检索代码来自本地 `nature-citation` skill，保留来源和修改说明。
-上游许可未确认，本版本不擅自添加开源许可证或宣称可自由再分发；对外发布前
-应核实相关代码的授权条件。
+本技能采用 [Apache License, Version 2.0](LICENSE)。内置检索模块改编自
+[Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills)
+的 `nature-citation`，随包保留 [署名](NOTICE) 和 [来源及修改说明](references/bundled-search.md)。
 
-版本文件为 [VERSION](VERSION)，对应本地 Git 标签 `v0.1.0`。本次只建立本地
-版本记录，不配置远程仓库、不执行推送。
+当前版本见 [VERSION](VERSION)。
