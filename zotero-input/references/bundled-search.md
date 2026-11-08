@@ -17,6 +17,8 @@ explicit scopes. XML parsing uses defusedxml when available and a bounded
 standard-library parser rejecting entities, DOCTYPE and NUL otherwise.
 The report and browser labels describe unreviewed candidates. The HTML browser
 escapes embedded JSON, validates links and renders selection text as text.
+The contact User-Agent is built from `ZOTERO_REF_EMAIL` when that variable is
+set and otherwise carries only the tool name, so no placeholder address ships.
 Legacy format/author tests are included. Search remains metadata candidate
 generation; approved citation rendering is in `citation_handoff.py`.
 

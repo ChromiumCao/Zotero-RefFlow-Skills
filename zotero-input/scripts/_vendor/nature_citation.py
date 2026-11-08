@@ -17,6 +17,7 @@ import csv
 import hashlib
 import html
 import json
+import os
 import re
 import sys
 import time
@@ -44,7 +45,10 @@ quoteattr = lambda data: '"%s"' % xml_escape(data).replace('"', "&quot;")
 
 CROSSREF_API = "https://api.crossref.org/works"
 PUBMED_EFETCH = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
-USER_AGENT = "codex-nature-citation/1.0 (mailto:unknown@example.com)"
+# CrossRef asks callers for a reachable contact address. Supply one through
+# ZOTERO_REF_EMAIL rather than shipping a placeholder address here.
+CONTACT_EMAIL = os.environ.get("ZOTERO_REF_EMAIL", "").strip()
+USER_AGENT = "codex-nature-citation/1.0" + (f" (mailto:{CONTACT_EMAIL})" if CONTACT_EMAIL else "")
 EXPORT_FORMAT_CHOICES = ("enw", "ris", "zotero-rdf", "rdf")
 DEFAULT_EXPORT_FORMAT = "ris"
 ZOTERO_RDF_NS = {

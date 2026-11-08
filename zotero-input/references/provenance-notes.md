@@ -205,8 +205,7 @@ second create or alternate writer was attempted. That historical job remains
 unverified and must not be replayed. Native-console/UI execution is unverified
 because desktop automation was unavailable in the test environment.
 
-On 2026-10-14 the user explicitly authorized real-paper tests in their experiment
-collection. Current runtime discovery exposed a compatible `write_note` schema.
+On 2026-10-14 an authorized real-paper test used a designated test collection. Current runtime discovery exposed a compatible `write_note` schema.
 The ordinary coordinator imported the PubMed-verified AlphaFold reference
 (PMID 34265844, DOI 10.1038/s41586-021-03819-2) into the verified selected target.
 One create call produced a child note; an independent backend with writer

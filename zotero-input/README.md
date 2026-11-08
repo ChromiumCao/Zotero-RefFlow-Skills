@@ -39,6 +39,9 @@ collection 导入、为无引用文本补充参考文献、引用对应关系笔
   明确报告，不自动安装。扫描件需要可用的 OCR 或已核实文本。
 - 不强制安装第三方 Zotero 插件、配置账号或 API key。可选插件不可用时，
   按支持的 Connector 或 Zotero 原生操作路径处理；缺少必要执行能力时报告待完成。
+- 在线元数据查询会向 CrossRef 和 NCBI 标明工具名。这两家建议调用方提供可联系的
+  邮箱：设置环境变量 `ZOTERO_REF_EMAIL=<你的邮箱>` 即会一并发送；未设置时只发送
+  工具名，不会发送占位地址。
 
 本地 API 按只读使用，绝不直接修改 `zotero.sqlite`。Connector 导入目标是
 Zotero 界面当前选中的 collection；`--collection` 只是目标约束，不会替用户

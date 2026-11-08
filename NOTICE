@@ -1,4 +1,12 @@
 Zotero-RefFlow-Skills
+Copyright 2026 The Zotero-RefFlow-Skills Authors
+
+Licensed under the Apache License, Version 2.0. See LICENSE.
+
+Zotero is a registered trademark of the Corporation for Digital Scholarship.
+This project is an independent set of skills for use with Zotero and is not
+affiliated with, endorsed by, or sponsored by the Zotero project or the
+Corporation for Digital Scholarship.
 
 Zotero Input includes a modified version of the nature-citation search and
 export script from nature-skills by Yuan1z0825 and its contributors.
@@ -9,6 +17,7 @@ Upstream file: skills/nature-citation/scripts/nature_citation.py
 Upstream license: Apache License, Version 2.0
 
 Zotero-RefFlow-Skills modified the script's journal scope defaults, XML parsing,
-report labels and HTML browser output. The modified file is distributed as
-zotero-input/scripts/_vendor/nature_citation.py in this repository and as
-scripts/_vendor/nature_citation.py in the standalone Zotero Input directory.
+report labels, HTML browser output and the contact User-Agent. The modified file
+is distributed as zotero-input/scripts/_vendor/nature_citation.py in this
+repository and as scripts/_vendor/nature_citation.py in the standalone Zotero
+Input directory.

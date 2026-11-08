@@ -41,6 +41,12 @@ LOCAL_API_PREF = "extensions.zotero.httpServer.localAPI.enabled"
 LOCAL_USER = "/api/users/0"
 API_VERSION_HEADERS = {"Zotero-API-Version": "3"}
 CONNECTOR_HEADERS = {"X-Zotero-Connector-API-Version": "3"}
+
+# CrossRef and NCBI ask callers to identify themselves with a reachable contact
+# address. Supply one through ZOTERO_REF_EMAIL; no placeholder is baked in, so an
+# unconfigured install sends only the tool name instead of a fake address.
+CONTACT_EMAIL = os.environ.get("ZOTERO_REF_EMAIL", "").strip()
+USER_AGENT = "ZoteroInputSkill/1.0" + (f" (mailto:{CONTACT_EMAIL})" if CONTACT_EMAIL else "")
 TEXT_LIMIT = 300
 API_PAGE_LIMIT = 100
 DEFAULT_TIMEOUT = 10.0  # increased from 2.0 to avoid spurious timeouts on large libraries
@@ -739,7 +745,7 @@ def _search_crossref(
         params["filter"] = f"from-pub-date:{year}"
 
     url = "https://api.crossref.org/works?" + urllib.parse.urlencode(params)
-    headers = {"User-Agent": "ZoteroInputSkill/1.0 (mailto:user@example.com)"}
+    headers = {"User-Agent": USER_AGENT}
 
     try:
         req = urllib.request.Request(url, headers=headers)
@@ -766,7 +772,7 @@ def _search_crossref(
         pages = ""
         page_info = item.get("page", "")
         if page_info:
-            pages = page_info.replace("-", "-")
+            pages = page_info.replace("\u2013", "-").replace("\u2014", "-")
 
         # Extract year from issued date
         issued = item.get("issued", {}).get("date-parts", [[]])
@@ -885,7 +891,7 @@ def _crossref_item_to_entry(item: dict[str, Any]) -> dict[str, Any]:
 def _lookup_by_doi(doi: str, *, timeout: float = 15.0) -> dict[str, Any] | None:
     """Fetch a single work from CrossRef by DOI (most reliable match)."""
     url = f"https://api.crossref.org/works/{urllib.parse.quote(doi, safe='/')}"
-    headers = {"User-Agent": "ZoteroInputSkill/1.0 (mailto:user@example.com)"}
+    headers = {"User-Agent": USER_AGENT}
     try:
         req = urllib.request.Request(url, headers=headers)
         with urllib.request.urlopen(req, timeout=timeout) as resp:
@@ -915,7 +921,15 @@ def cmd_crossref_lookup(args: argparse.Namespace) -> None:
 
 NCBI_SEARCH = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
 NCBI_EFETCH = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
-NCBI_UA = "ZoteroInputSkill/1.0 (mailto:user@example.com)"
+NCBI_UA = USER_AGENT
+
+
+def _ncbi_query(**params: Any) -> str:
+    """Add NCBI's requested tool/contact identification to an E-utilities query."""
+    payload: dict[str, Any] = {"tool": "zotero-input", **params}
+    if CONTACT_EMAIL:
+        payload["email"] = CONTACT_EMAIL
+    return urllib.parse.urlencode(payload)
 
 
 def _pubmed_search(title: str, author: str | None = None, year: int | None = None) -> list[str]:
@@ -926,7 +940,7 @@ def _pubmed_search(title: str, author: str | None = None, year: int | None = Non
     if year:
         terms.append(f'{year}[Date - Publication]')
     query = " AND ".join(terms)
-    params = urllib.parse.urlencode({"db": "pubmed", "term": query, "retmode": "json", "retmax": 5})
+    params = _ncbi_query(db="pubmed", term=query, retmode="json", retmax=5)
     try:
         req = urllib.request.Request(f"{NCBI_SEARCH}?{params}", headers={"User-Agent": NCBI_UA})
         with urllib.request.urlopen(req, timeout=15) as resp:
@@ -943,7 +957,7 @@ def _pubmed_fetch(pmid: str) -> dict[str, Any] | None:
     (e.g. "Chen Q" — no full first name available), while efetch's <ForeName>
     carries the complete given name, so full author names land in the RIS.
     """
-    params = urllib.parse.urlencode({"db": "pubmed", "id": pmid, "retmode": "xml"})
+    params = _ncbi_query(db="pubmed", id=pmid, retmode="xml")
     try:
         req = urllib.request.Request(f"{NCBI_EFETCH}?{params}", headers={"User-Agent": NCBI_UA})
         with urllib.request.urlopen(req, timeout=15) as resp:

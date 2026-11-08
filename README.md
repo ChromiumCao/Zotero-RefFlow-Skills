@@ -14,6 +14,7 @@
 3. 准备 Python 3.10 或更高版本。Input 的主要脚本使用 Python 标准库。使用 Output 时，进入 `zotero-output/` 安装依赖并检查环境。
 
 ```sh
+cd zotero-output
 python -m pip install -r requirements.txt
 python -X utf8 -B scripts/zotero_output.py doctor
 ```
@@ -53,5 +54,9 @@ python -X utf8 -B -m unittest discover -s zotero-output/scripts -p "test_*.py" -
 ## 代码来源与许可
 
 本项目采用 [Apache License, Version 2.0](LICENSE)。两项独立 ZIP 各自包含许可证副本。
+
+Copyright 2026 The Zotero-RefFlow-Skills Authors。
+
+Zotero 是 Corporation for Digital Scholarship 的注册商标。本项目是配合 Zotero 使用的独立技能集，与 Zotero 项目及该机构没有隶属、背书或赞助关系。
 
 感谢 [Yuan1z0825](https://github.com/Yuan1z0825) 和 [nature-skills](https://github.com/Yuan1z0825/nature-skills) 的贡献者。Zotero Input 内置的文献检索与导出脚本改编自该项目的 `nature-citation`，上游同样采用 Apache-2.0。来源提交、修改说明和署名随 Input 一同分发。参见 [NOTICE](NOTICE) 和 [Input 上游来源记录](zotero-input/references/bundled-search.md)。

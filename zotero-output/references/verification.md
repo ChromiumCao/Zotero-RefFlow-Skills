@@ -9,7 +9,7 @@ the tested environment; it is not a promise about all Zotero/Word versions.
 The v0.1.0 snapshot was checked again on 2026-10-15 (Asia/Shanghai): all 23
 isolated tests passed, including the composer, PDF and current zotero-input
 normalization contract. The runner used a writable task-local temporary directory
-after the sandbox's default temporary directory denied file writes. No live
+after the default temporary directory denied file writes. No live
 Word refresh or Zotero write was repeated for this version snapshot; the actual
 integration evidence below remains the earlier dated test.
 
@@ -116,8 +116,8 @@ collection creation/UI selection and asynchronous 60-second timing are **pending
 integration verification**. The helper's deterministic routing boundary does not
 prove elapsed UI timing or successful creation. Earlier dated live evidence
 above is retained as history, not claimed as a new v0.1.1 integration run.
-An actual loopback API probe was attempted outside the sandbox restriction and
-received connection refused (WinError 10061) at port 23119. Zotero was therefore
+An actual loopback API probe was attempted and
+received connection refused at port 23119. Zotero was therefore
 not available for a new live integration run; no library or collection writes
 were attempted.
 
@@ -130,6 +130,6 @@ objects and multi-source endnotes are rejected by the bundled rich composer;
 they require an alternate trusted workflow. PDF layout/media reconstruction
 and Markdown rendering have separate review requirements.
 
-Keep private local integration fixtures and quota-monitor state outside the
+Keep private local integration fixtures outside the
 distributed skill. This skill's bundle contains no copied Zotero library data,
 account configuration, machine-specific paths or runtime logs.

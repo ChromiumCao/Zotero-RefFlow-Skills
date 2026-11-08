@@ -179,7 +179,7 @@ The same enabled profile exposed `write_note`, but one consented child-note
 attempt timed out and subsequent read-only checks found no matching child.
 Its durable journal remains uncertain; no retry or alternate writer was used.
 
-On 2026-10-14 the user authorized real-paper testing in the experiment collection.
+On 2026-10-14 an authorized real-paper test used a designated test collection.
 The ordinary coordinator verified that collection's current UI selection, then
 imported one PubMed-verified record through Connector and independently confirmed
 the actual adopted item and target membership. The advertised `write_note` route
