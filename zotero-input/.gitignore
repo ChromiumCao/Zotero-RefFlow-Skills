@@ -1,0 +1,20 @@
+# Local Python runtimes and generated caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Private local configuration and recovery state
+.env
+.env.*
+!.env.example
+*.journal.json
+*.journal.json.lock
+.zotero-input-state/
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
