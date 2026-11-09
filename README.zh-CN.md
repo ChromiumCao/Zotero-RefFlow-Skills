@@ -49,11 +49,15 @@ AI Agent 已经可以查阅文献、撰写章节，却常常留下**分散的 Wo
 
 为了测试不同 Agent 平台的适用性，这次从原来的 Codex 换到了**另一套 Agent Harness**，使用 **DeepSeek V4.1 Flash（High）**完成。此次开启了逐句原文核验，比单纯整合文稿的 Token 消耗更高。
 
-### 成果一：一份可编辑、引用编号统一的 Word 手稿
+### 成果一：一份手稿，引用格式随时切换
 
-三部分文本按顺序整合，原先混乱的引用转换成一套全局顺序编号，参考文献最终为 **5 篇不同的文章**。
+三部分文本按顺序整合为一份可编辑 Word，统一为一套引文编号，保留 **5 篇不同的参考文献**。使用 Zotero 的 **Document Preferences（文档首选项）**，可以将同一篇手稿从 **Vancouver 格式**切换为 **GB/T 7714 格式**，正文引文和文末参考文献同步更新。
 
-[![包含 Zotero 工具栏、统一引文编号和参考文献列表的 Word 手稿](assets/demo/merged-file.png)](assets/demo/merged-file.png)
+| Vancouver：合并后的原始格式 | GB/T 7714：切换后的格式 |
+| :---: | :---: |
+| [![Vancouver 格式的合并 Word 手稿](assets/demo/merged-file.png)](assets/demo/merged-file.png) | [![同一份手稿切换为 GB/T 7714 格式](assets/demo/gbt7714-style.png)](assets/demo/gbt7714-style.png) |
+
+*点击图片可查看原尺寸截图。*
 
 ### 成果二：在 Word 中用 Zotero 原生功能管理书目
 
@@ -161,6 +165,10 @@ python tools/package_skills.py --skill zotero-output
 python -X utf8 -B -m unittest discover -s zotero-input/scripts -p "test_*.py" -v
 python -X utf8 -B -m unittest discover -s zotero-output/scripts -p "test_*.py" -v
 ```
+
+## 学术诚信与免责声明
+
+Zotero RefFlow 仅辅助文献管理与论文整理，不能替代作者的学术审查。**使用或投稿前，请自行核对参考文献、原文证据、论述内容及 AI 生成的信息。** 用户须遵守所在机构和期刊的学术规范；本项目不支持抄袭、伪造引文等学术不端行为，也不对使用者的相关行为承担责任。通过第三方 AI 服务处理未公开稿件时，请遵守保密及数据使用要求。
 
 ## 许可与致谢
 

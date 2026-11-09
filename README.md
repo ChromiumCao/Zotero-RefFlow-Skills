@@ -49,11 +49,15 @@ Any academic-writing Agent / Skill
 
 This run was performed in **a different Agent harness from the original Codex workflow**, using **DeepSeek V4.1 Flash (High)**. The full-text evidence comparison was enabled, which makes the task more token-intensive than a straightforward merge.
 
-### Result 1 — A unified, editable Word manuscript
+### Result 1 — One manuscript, editable citations, interchangeable styles
 
-The output preserves all three sections, replaces the conflicting source citation schemes with one global sequence, and contains **five distinct references**.
+The three sections were merged into an editable Word document with **one global citation sequence and five distinct references**. With Zotero's **Document Preferences**, the same manuscript can switch from **Vancouver** to **GB/T 7714**—the in-text citation markers and bibliography update together.
 
-[![Merged Word document showing Zotero toolbar, unified in-text numbering and consolidated bibliography](assets/demo/merged-file.png)](assets/demo/merged-file.png)
+| Vancouver — original merged manuscript | GB/T 7714 — after switching citation style |
+| :---: | :---: |
+| [![Merged Word manuscript using Vancouver citations](assets/demo/merged-file.png)](assets/demo/merged-file.png) | [![The same manuscript using GB/T 7714 citations](assets/demo/gbt7714-style.png)](assets/demo/gbt7714-style.png) |
+
+*Click either screenshot to view the full-size document.*
 
 ### Result 2 — Zotero recognizes and edits the bibliography
 
@@ -161,6 +165,10 @@ Run isolated tests:
 python -X utf8 -B -m unittest discover -s zotero-input/scripts -p "test_*.py" -v
 python -X utf8 -B -m unittest discover -s zotero-output/scripts -p "test_*.py" -v
 ```
+
+## Academic integrity and disclaimer
+
+Zotero RefFlow is a research-writing aid, not a substitute for the author's review. **Check all citations, source details, claims, and AI-generated content before use or submission.** Users are responsible for complying with academic integrity rules and publication policies; this project does not endorse or accept responsibility for plagiarism, fabricated citations, or other academic misconduct by users. When using third-party AI services, follow applicable confidentiality and data-sharing requirements.
 
 ## License and attribution
 
