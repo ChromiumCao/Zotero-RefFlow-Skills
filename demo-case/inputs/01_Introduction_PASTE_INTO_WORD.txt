@@ -1,0 +1,15 @@
+1. Background: why the timing of movement matters
+
+Academic discussions of physical activity often focus on the total amount of exercise, but the distribution of movement across the day may also matter for glycemic responses. In a randomized crossover experiment, brief walking breaks during prolonged sitting reduced postprandial glucose and insulin responses compared with uninterrupted sitting (Dunstan et al., 2012). This finding addresses an acute metabolic response; it does not by itself establish long-term prevention of diabetes.
+
+The timing of walking relative to meals is another relevant dimension. DiPietro et al. (2013) studied ten inactive adults aged at least 60 years who were at risk for impaired glucose tolerance. Three 15-minute postmeal walking bouts improved 24-hour glycemic control; the postmeal regimen also lowered postdinner glucose more effectively than a single 45-minute sustained walk in the comparison conditions. These findings support the feasibility of studying exercise timing in older populations, although the small sample limits generalization.
+
+Exercise recommendations for people with diabetes must also consider the person's clinical context, medication use, and individual capacity (Colberg et al., 2016). For this reason, small acute experiments should be interpreted alongside broader clinical guidance rather than used as universal prescriptions.
+
+References (author–year style; these are PLAIN TEXT, not Zotero fields)
+
+Colberg, S. R., Sigal, R. J., Yardley, J. E., et al. (2016). Physical Activity/Exercise and Diabetes: A Position Statement of the American Diabetes Association. Diabetes Care, 39(11), 2065–2079. https://doi.org/10.2337/dc16-1728
+
+DiPietro, L., Gribok, A., Stevens, M. S., Hamm, L. F., & Rumpler, W. (2013). Three 15-min Bouts of Moderate Postmeal Walking Significantly Improves 24-h Glycemic Control in Older People at Risk for Impaired Glucose Tolerance. Diabetes Care, 36(10), 3262–3268. DOI: 10.2337/dc13-0084
+
+Dunstan, D. W., Kingwell, B. A., Larsen, R., et al. (2012). Breaking Up Prolonged Sitting Reduces Postprandial Glucose and Insulin Responses. Diabetes Care, 35(5), 976–983. doi:10.2337/dc11-1931

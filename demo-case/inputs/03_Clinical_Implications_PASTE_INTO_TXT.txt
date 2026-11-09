@@ -1,0 +1,17 @@
+3. Clinical interpretation and manuscript integration
+
+A strategy that appears useful in controlled experiments is not automatically suitable for every patient. For older adults with impaired glucose tolerance risk, three short postmeal walks were compared with a single longer daily walk (DiPietro L. et al., 2013). In a different population—people already diagnosed with type 2 diabetes—replacing some sitting with standing and light walking improved glycemic measures (Duvivier et al., 2016 [online publication]; print year 2017). The studies are complementary, but the populations and activity prescriptions are not identical.
+
+Guidance should distinguish acute glucose responses from disease prevention, and tailor physical activity to a person's clinical circumstances (Colberg and colleagues, 2016). Short walking breaks therefore offer a promising practical question for further research, rather than a guaranteed treatment effect.
+
+A separate trial in adults without diabetes also investigated interrupted sitting and postprandial glycemia (Peddie et al., 2013). Note that Peddie and DiPietro published in the SAME YEAR, but they are different papers. Likewise, Duvivier's 2016 online publication and 2017 print issue identify the SAME article, not two different studies.
+
+SOURCE LIST — inconsistent plain-text formatting is intentional
+
+• L. DiPietro / A. Gribok / M. Stevens / L. Hamm / W. Rumpler, 2013, Diabetes Care 36:3262-68, "Three 15-min Bouts of Moderate Postmeal Walking Significantly Improves 24-h Glycemic Control...", PMID 23761134.
+
+• B. M. F. M. Duvivier et al., published online 2016, Diabetologia 60 (2017), 490-498, https://doi.org/10.1007/s00125-016-4161-7
+
+• Colberg SR and colleagues (2016), "Physical Activity/Exercise and Diabetes", position statement, DOI 10.2337/dc16-1728.
+
+• Peddie, Meredith C. (2013). American Journal of Clinical Nutrition 98(2):358–366; DOI: 10.3945/ajcn.112.051763.

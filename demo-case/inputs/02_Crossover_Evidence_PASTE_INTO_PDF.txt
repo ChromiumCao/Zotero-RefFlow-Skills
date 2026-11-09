@@ -1,0 +1,13 @@
+2. Experimental evidence on interrupted sitting
+
+Short activity breaks have been examined in populations with different metabolic profiles. A randomized crossover study in healthy, normal-weight adults found that interrupting prolonged sitting with brief activity reduced postprandial glycemia [1]. Another experiment reported that breaking up sitting with light- or moderate-intensity walking reduced postprandial glucose and insulin responses [2]. Despite addressing related questions, these studies used distinct samples and protocols; their effects should not be treated as interchangeable.
+
+Studies in clinical populations provide another perspective. In people with type 2 diabetes, Duvivier and colleagues compared prolonged sitting, a structured exercise regimen, and a regimen involving more standing and light-intensity walking. The Sit Less condition improved 24-hour glucose measures and insulin sensitivity relative to prolonged sitting [3]. The intervention involved substantially more activity than a few brief two-minute breaks, so it would be inaccurate to describe these results as proof that a minimal dose has the same effect.
+
+References (LOCAL numbering for this PDF only; restart at [1])
+
+[3] Duvivier BMFM, Schaper NC, Hesselink MKC, et al. Breaking sitting with light activities vs structured exercise: a randomised crossover study demonstrating benefits for glycaemic control and insulin sensitivity in type 2 diabetes. Diabetologia. 2017;60:490–498. doi:10.1007/s00125-016-4161-7.
+
+[1] Peddie MC, Bone JL, Rehrer NJ, Skeaff CM, Gray AR, Perry TL. Breaking prolonged sitting reduces postprandial glycemia in healthy, normal-weight adults: a randomized crossover trial. Am J Clin Nutr. 2013;98(2):358–366. doi:10.3945/ajcn.112.051763.
+
+[2] Dunstan DW, Kingwell BA, Larsen R, et al. Breaking up prolonged sitting reduces postprandial glucose and insulin responses. Diabetes Care. 2012;35:976–983. PMID: 22374636.

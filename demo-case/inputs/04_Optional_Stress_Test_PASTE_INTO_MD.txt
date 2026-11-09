@@ -1,0 +1,15 @@
+# 4. Claims that require an evidence check
+
+The preceding studies suggest that how sedentary time is interrupted may influence short-term glycemic outcomes. For example, Duvivier et al. (2017) tested standing and light walking in a crossover study involving people with type 2 diabetes, while DiPietro and colleagues (2013) evaluated postmeal walking in a small sample of older adults at risk for impaired glucose tolerance.
+
+A draft from another agent made a much stronger claim: **"Three 15-minute walks after meals permanently prevent type 2 diabetes in every adult aged over 60"** (DiPietro et al., 2013). This assertion should be subjected to direct source verification before it is retained in a scientific manuscript.
+
+The same draft also referred to a supposedly large multicenter trial showing a 2-percentage-point HbA1c reduction from five-minute postmeal walks (Lee et al., 2021), but supplied no title, journal, DOI, PMID, or reference-list entry. The source identity is therefore unresolved in this test and must not be silently assigned to a convenient paper.
+
+Reference list:
+
+Duvivier et al. 2017. Breaking sitting with light activities vs structured exercise. Diabetologia 60, 490–498. doi:10.1007/s00125-016-4161-7.
+
+DiPietro et al., 2013. Three 15-min Bouts of Moderate Postmeal Walking ... Diabetes Care 36:3262–3268. doi:10.2337/dc13-0084.
+
+[No bibliographic entry for Lee et al. (2021) was provided by the draft agent.]
